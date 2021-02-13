@@ -4,7 +4,9 @@ This project contains the code for the points tracking service for fetch reward 
 ## Requirements
 
 * Java 11
+  https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
 * Maven
+  install instruction here(https://maven.apache.org/install.html)
 
 ### Local Run
 Step 1: pull the code and cd into the root directory with Command line
