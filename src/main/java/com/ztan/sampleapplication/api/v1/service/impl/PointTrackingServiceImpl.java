@@ -86,6 +86,9 @@ public class PointTrackingServiceImpl implements PointTrackingService {
         try {
             LocalDateTime dateTime = LocalDateTime.parse(dateString, formatter);
             //todo get dynamic timezone
+            if (dateTime.isAfter(LocalDateTime.now())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cannot create transaction for the future!");
+            }
             return dateTime.atZone(ZoneId.systemDefault())
                     .toInstant().toEpochMilli();
         } catch (DateTimeParseException exception){
