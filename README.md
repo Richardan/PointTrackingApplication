@@ -18,9 +18,10 @@ to build the jar file to the /target folder, you should be able to see the BUILD
 Step 3: run the application with command
   $java -jar *absolute-path-on-your-laptop*\SampleApplication-0.0.1-SNAPSHOT.jar
 
-Step 4: once the application is running, it is accessable at paht: http://localhost at port:8080
-run following cmds to test it:
-  $ curl --location --request GET 'http://localhost:8080/awesome_service/health_check'   should return 200OK to indicting application is up and running
+Step 4: once the application is running, it is accessable at path: http://localhost at port:8080
+you may run following cmds to test its feature:
+  $ curl --location --request GET 'http://localhost:8080/awesome_service/health_check'   
+  should return 200OK indicting application is up and running
   
 Step 5: run follow curl command for adding data into the "DB" and test the addPoint feature:
   $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points' \
