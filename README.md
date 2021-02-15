@@ -29,7 +29,7 @@ Step 5: run follow curl command for adding data into the "DB" and test the addPo
 --data-raw '{
     "payerId": "tester3 inc.",
     "points": 100000,
-    "timeStamp": "05/31 09AM"
+    "timeStamp": "05/31 10AM"
 }'
   
   $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points' \
@@ -37,7 +37,7 @@ Step 5: run follow curl command for adding data into the "DB" and test the addPo
 --data-raw '{
     "payerId": "Jan_tester LLC",
     "points": 10000,
-    "timeStamp": "01/31 09AM"
+    "timeStamp": "01/31 08AM"
 }'
 
 $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points' \
@@ -45,7 +45,7 @@ $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points
 --data-raw '{
     "payerId": "tester company",
     "points": 400,
-    "timeStamp": "12/31 09PM"
+    "timeStamp": "01/31 09PM"
 }'
 
 $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points' \
@@ -53,7 +53,7 @@ $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points
 --data-raw '{
     "payerId": "tester company",
     "points": 500,
-    "timeStamp": "11/31 09PM"
+    "timeStamp": "01/31 09PM"
 }'
 
 $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points' \
@@ -61,7 +61,7 @@ $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points
 --data-raw '{
     "payerId": "tester company",
     "points": -600,
-    "timeStamp": "12/31 09PM"
+    "timeStamp": "01/31 10PM"
 }'
 
 $ curl --location --request GET 'http://localhost:8080/awesome_service/1/points' 
