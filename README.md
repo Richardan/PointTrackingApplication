@@ -73,3 +73,26 @@ $ curl --location --request POST 'http://localhost:8080/awesome_service/1/points
 }'
 should return the expected transaction. You may run the GET request again to check the accuracy of balances after deduct.
 
+# API doc
+POST 'http://localhost:8080/awesome_service/1/points'
+{
+    "payerId": "String",
+    "points": Long,
+    "timeStamp": "String"
+}
+POST to /points will adding points, all fields are required. When points is negative not enough points for that payer will result in 403.
+Timestamp is in the format given by the question doc(MM/DD HHaa) assuming the year it current year, and will be parsed into long and used to sort.
+(For this excerse, service is not using a real database, a priority queue is used to mimick the sorting and select from DB)
+
+Transactions will be used in the sorted manner to encounter for deduction.
+
+GET http://localhost:8080/awesome_service/1/points
+Will query the current points balance with each payer for the user. 
+(For this excerse, service is not using a real database, a HashMap is used to store the key-value for payerId - balance data)
+Not like most real datastorage, HashMap is not thread-safe, so this application with current setup cannot deal with multithread scenario. 
+
+POST 'http://localhost:8080/awesome_service/1/points/deduct'
+{
+    "amount": Long
+}
+Will deduct x amount of points from the user, will start with oldest transactions. Response will include all affected transactions.
